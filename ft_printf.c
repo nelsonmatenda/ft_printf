@@ -6,63 +6,63 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 13:00:08 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/27 13:24:55 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:55:32 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "./includes/printf.h"
 
-int     ft_print(const char *fmt);
+void    ft_call_prints(const char *fmt, t_data d);
 
 int	ft_printf(const char *first_arg, ...)
 {
-	// FAZER UM LOOP QUE VAI CHECAR CADA CARACTER CASO ENCONTRE
-    // UM ESPECIFICADOR (%) CHAMO UMA FUNCAO QUE FAÇA O PARSING
-    va_list all_arg;
-    int nbr_char_printed;
+    t_data  data;
     int i;
-    
-    va_start(all_arg, first_arg);
+    t_data  *teste;
+
+    va_start(data.ap, first_arg);
+    ft_init_data(data, first_arg);
     i = 0;
-    nbr_char_printed = 0;
     while (first_arg[i])
     {
         if (first_arg[i] == '%')
         {
-            // fazer alguma parsing
-            nbr_char_printed += ft_call_prints(&first_arg[++i]); // TODO: fazer a funcao
+            ft_call_prints(&first_arg[++i], data); // TODO: fazer a funcao
             i++;
         }
         else
-            //nbr_char_printed += ft_putchar_fd(first_arg[i], 1);
+        {
+            ft_putchar_fd(first_arg[i], 1);
+            data.nbr_char_printed +=1;
+        }
         i++;
     }
     va_end(all_arg);
-    return (nbr_char_printed);
+    return (data.nbr_char_printed);
 }
 
-int     ft_call_prints(const char *fmt)
+void     ft_call_prints(const char *fmt, t_data d)
 {
-    char   *flag;
-    char    spec[9];
-    int i;
+    // TODO: do de "# .0-+"
+    // cspdiuxX%
+    if (*fmt = 'c')
+        d.nbr_char_printed += ft_putchar(va_arg(d.ap, int));
+    // if (*fmt = 's')
+    //     d.nbr_char_printed += ft_putstr(va_arg(d.ap, char *));
     
-    i = 0;
-    flag = "-+ #0";
-    spec[] = ft_memchr("cspdiuxX%", *fmt, ft_strlen)
+}
+
+char ft_find_spec(const char fmt)
+{
+    char *spec;
+    char    *flags;
+
+    flags = ""
+    spec = ft_memchr(cspdiuxX%);
     while (!spec)
     {
-        if (ft_memchr(flag, *fmt, ft_strlen(flag)))
-        {
-            ft_set_flag(); // TODO: uma fun
-        }
-        else {
-            printf("nao cheguei %i", i);
-        }
-        fmt++;
-        spec =  ft_memchr("cspdiuxX%", *fmt, ft_strlen);
+        if (*spec == '')
     }
-    return (1);        
 }
 
 int main()

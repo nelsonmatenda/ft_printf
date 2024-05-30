@@ -6,11 +6,11 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 12:45:38 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/28 12:45:42 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:05:26 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
 int	ft_puthexa(unsigned long n, char format)
 {

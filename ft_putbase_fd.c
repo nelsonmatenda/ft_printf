@@ -6,9 +6,11 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 12:48:55 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/28 12:48:59 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:05:00 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "printf.h"
 
 void	ft_putbase_fd(int nbr, const char *base, int fd)
 {

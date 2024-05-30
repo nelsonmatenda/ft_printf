@@ -6,13 +6,13 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:46:49 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/28 11:53:18 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:40:27 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
 
-void    ft_init_data (t_data d, const char s)
+void    ft_init_data (t_data d, const char *s)
 {
     d.s = s;
     d.nbr_char_printed = 0;

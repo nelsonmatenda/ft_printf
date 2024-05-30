@@ -6,11 +6,11 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 12:54:49 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/28 12:54:55 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:03:52 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
 long	ft_abs(long n)
 {

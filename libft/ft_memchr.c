@@ -6,7 +6,7 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:20:01 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/27 12:56:38 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/05/31 12:40:06 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	*ft_memchr(char *s, int c, size_t n)
 {
-	//TODO: retificar a funcao
-	#include <stdio.h>
-	size_t	i;
-	//printf("memchr(%s, %c, %zu)\n", s, c, n);
-
-	char *str = (char *)(s);
+	char	*str = (char *)(s);
+	size_t	 i;
+	
 	i = 0;
 	while (i < n)
 	{

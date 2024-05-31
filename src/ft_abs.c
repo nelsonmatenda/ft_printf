@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 12:17:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/30 10:05:17 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/05/28 12:54:49 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/05/31 12:44:46 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putchar(char c)
+long	ft_abs(long n)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	long	nb;
+
+	nb = 1;
+	if (n < 0)
+		nb *= -n;
+	else
+		nb *= n;
+	return (nb);
 }

@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putbase_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 12:54:18 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/30 11:20:43 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/05/28 12:48:55 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/05/31 12:45:04 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static int	ft_nbrlen(long n)
+void	ft_putbase_fd(int nbr, const char *base, int fd)
 {
-	int	i;
+	int		base_len;
+	long	nb;
+	char	c;
 
-	if (n < 0)
+	base_len = ft_strlen(base);
+	if (nbr < 0)
 	{
-		n = ft_abs(n);
-		i = 1;
+		write(fd, "-", 1);
+		nb = -((long)nbr);
 	}
 	else
-		i = 0;
-	while (n >= 10)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i + 1);
-}
-
-int	ft_putnbr(int n)
-{
-	int	nbr_len;
-
-	nbr_len = ft_nbrlen(n);
-	ft_putnbr_fd(n, 1);
-	return (nbr_len);
+		nb = (long)nbr;
+	if (nb > (base_len - 1))
+		ft_putbase_fd(nb / base_len, base, fd);
+	c = *(base + (nb % base_len));
+	write(fd, &c, 1);
 }

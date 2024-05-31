@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 12:54:49 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/30 10:03:52 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/05/28 12:54:18 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/05/31 12:45:21 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-long	ft_abs(long n)
+static int	ft_nbrlen(long n)
 {
-	long	nb;
+	int	i;
 
-	nb = 1;
 	if (n < 0)
-		nb *= -n;
+	{
+		n = ft_abs(n);
+		i = 1;
+	}
 	else
-		nb *= n;
-	return (nb);
+		i = 0;
+	while (n >= 10)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i + 1);
+}
+
+int	ft_putnbr(int n)
+{
+	int	nbr_len;
+
+	nbr_len = ft_nbrlen(n);
+	ft_putnbr_fd(n, 1);
+	return (nbr_len);
 }

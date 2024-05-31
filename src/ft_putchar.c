@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 12:46:11 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/05/30 11:20:49 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/05/28 12:17:21 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/05/31 12:45:11 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putstr(char const *s)
+int	ft_putchar(char c)
 {
-	if (!s)
-		return (write(1, "(null)", 6));
-	return (write(1, s, ft_strlen(s)));
+	ft_putchar_fd(c, 1);
+	return (1);
 }

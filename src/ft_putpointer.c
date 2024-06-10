@@ -6,7 +6,7 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:55:47 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/06/06 13:48:09 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/06/10 08:26:41 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	put_pointer(void *nbr, char *base)
 		len = ft_putstr("0x");
 	n = (unsigned long)nbr;
 	str = hex_to_str(n, base);
-	len = ft_putstr(str);
+	len += ft_putstr(str);
 	free(str);
 	return (len);
 }

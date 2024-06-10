@@ -6,7 +6,7 @@
 /*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:55:07 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/06/06 13:46:09 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/06/10 07:59:36 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 			return (put_hex(va_arg(ap, unsigned int), "0123456789abcdef"));
 	}
 	else if (fmt[i + 1] == 'p')
-		return (put_pointer(va_arg(ap, void *), "0123456789abcdef"));
+		return (put_pointer(va_arg(ap, void *), \
+				"0123456789abcdef"));
 	else
 		return (0);
 }
